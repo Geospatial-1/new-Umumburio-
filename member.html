@@ -11,5 +11,39 @@ protectPage("member");
 </script>
 
 <script type="module" src="./js/app.js"></script>
+  <h2>Apply for Loan</h2>
+
+<select id="loanAmount">
+  <option value="5000">5,000</option>
+  <option value="10000">10,000</option>
+  <option value="20000">20,000</option>
+</select>
+
+<input id="guarantorId" placeholder="Guarantor UID">
+<button id="applyLoan">Submit Loan</button>
+
+<p id="loanMsg"></p>
+
+<script type="module">
+import { auth, db } from "./js/firebase.js";
+import { addDoc, collection, serverTimestamp } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+applyLoan.onclick = async () => {
+  try {
+    await addDoc(collection(db, "loans"), {
+      memberId: auth.currentUser.uid,
+      memberName: auth.currentUser.email,
+      amount: Number(loanAmount.value),
+      guarantorId: guarantorId.value,
+      status: "pending",
+      createdAt: serverTimestamp()
+    });
+    loanMsg.textContent = "Loan application submitted";
+  } catch (e) {
+    loanMsg.textContent = "Error submitting loan";
+  }
+};
+</script>
 </body>
 </html>
