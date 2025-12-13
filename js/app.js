@@ -16,5 +16,9 @@ btn.addEventListener("click", async () => {
       e.code === "auth/invalid-login-credentials"
         ? "Wrong email or password"
         : e.message;
+    import { logout } from "./auth.js";
+
+window.logoutUser = logout
+  ;
   }
 });
