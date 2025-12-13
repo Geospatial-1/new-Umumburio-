@@ -45,5 +45,25 @@ applyLoan.onclick = async () => {
   }
 };
 </script>
+  <h2>Resources</h2>
+<ul id="resList"></ul>
+
+<script type="module">
+import { db } from "./js/firebase.js";
+import { collection, getDocs }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const resSnap = await getDocs(collection(db, "resources"));
+
+resSnap.forEach(r => {
+  const d = r.data();
+  const li = document.createElement("li");
+  li.innerHTML = `
+    ${d.title} - KSH ${d.price}
+    <a href="${d.fileUrl}" target="_blank">Download</a>
+  `;
+  resList.appendChild(li);
+});
+</script>
 </body>
 </html>
