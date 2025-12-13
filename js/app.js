@@ -1,18 +1,20 @@
-import { login } from "./auth.js";
-
-
-const btn = document.getElementById("loginBtn");
-
-
 btn.addEventListener("click", async () => {
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
+  if (!email || !password) {
+    document.getElementById("error").textContent = "Email and password required";
+    return;
+  }
 
-try {
-await login(email, password);
-window.location.href = "dashboard.html";
-} catch (e) {
-document.getElementById("error").textContent = e.message;
-}
+  try {
+    await login(email, password);
+    window.location.href = "dashboard.html";
+  } catch (e) {
+    console.error(e.code);
+    document.getElementById("error").textContent =
+      e.code === "auth/invalid-login-credentials"
+        ? "Wrong email or password"
+        : e.message;
+  }
 });
