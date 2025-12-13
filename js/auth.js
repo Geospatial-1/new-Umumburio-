@@ -1,15 +1,17 @@
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { db } from "./firebase.js";
+
+import {
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 export async function login(email, password) {
-  const cred = await signInWithEmailAndPassword(auth, email, password);
-  return cred.user;
+  return await signInWithEmailAndPassword(auth, email, password);
 }
 
 export async function logout() {
@@ -17,12 +19,12 @@ export async function logout() {
   window.location.href = "login.html";
 }
 
-export async function getUserRole(uid) {
-  const snap = await getDoc(doc(db, "users", uid));
-  if (!snap.exists()) throw new Error("No role assigned");
-  return snap.data().role;
-}
-
 export function watchAuth(callback) {
   onAuthStateChanged(auth, callback);
+}
+
+export async function getUserRole(uid) {
+  const snap = await getDoc(doc(db, "users", uid));
+  if (!snap.exists()) throw new Error("User role not found");
+  return snap.data().role;
 }
