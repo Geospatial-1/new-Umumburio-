@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login – Umumburio SHG</title>
+  <title>Login</title>
 </head>
 <body>
+
+<h2>Login</h2>
 
 <input id="email" placeholder="Email">
 <input id="password" type="password" placeholder="Password">
@@ -17,8 +19,8 @@ loginBtn.onclick = async () => {
   try {
     await login(email.value.trim(), password.value);
     window.location.href = "member.html";
-  } catch (e) {
-    error.textContent = "Invalid email or password";
+  } catch {
+    error.textContent = "Invalid login credentials";
   }
 };
 </script>
