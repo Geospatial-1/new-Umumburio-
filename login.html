@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login – Umumburio SHG</title>
+</head>
+<body>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button id="loginBtn">Login</button>
+<p id="error"></p>
+
+<script type="module">
+import { login } from "./js/auth.js";
+
+loginBtn.onclick = async () => {
+  try {
+    await login(email.value.trim(), password.value);
+    window.location.href = "member.html";
+  } catch (e) {
+    error.textContent = "Invalid email or password";
+  }
+};
+</script>
+
+</body>
+</html>
