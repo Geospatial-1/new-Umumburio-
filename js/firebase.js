@@ -1,9 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
 
-
-const firebaseConfig = {
 apiKey: "AIzaSyAKNFEBMK9MF3-1P6hCsaE2aLKXIh7-nUw",
 
   authDomain: "newumumburio.firebaseapp.com",
@@ -22,6 +21,7 @@ apiKey: "AIzaSyAKNFEBMK9MF3-1P6hCsaE2aLKXIh7-nUw",
 
 
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getDatabase(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
