@@ -1,0 +1,14 @@
+<h1>Dashboard</h1>
+<nav>
+<a href="dashboard.html">Home</a>
+<a href="admin.html" id="adminLink">Admin</a>
+</nav>
+<script type="module">
+import { auth } from './js/firebase.js';
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js';
+
+
+onAuthStateChanged(auth, user => {
+if (!user) location.href = 'index.html';
+});
+</script>
