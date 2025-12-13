@@ -1,8 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Member Dashboard</h1>
+<button onclick="logoutUser()">Logout</button>
+
 <script type="module">
 import { protectPage } from "./js/guards.js";
 protectPage("member");
 </script>
 
-<h1>Member Dashboard</h1>
-<p>Loans, resources, events</p>
-<button onclick="location.href='index.html'">Home</button>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
