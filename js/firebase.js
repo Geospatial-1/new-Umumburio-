@@ -4,11 +4,22 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-
 
 
 const firebaseConfig = {
-apiKey: "YOUR_KEY",
-authDomain: "YOUR_DOMAIN",
-databaseURL: "YOUR_DB_URL",
-projectId: "YOUR_PROJECT_ID"
+apiKey: "AIzaSyAKNFEBMK9MF3-1P6hCsaE2aLKXIh7-nUw",
+
+  authDomain: "newumumburio.firebaseapp.com",
+
+  databaseURL: "https://newumumburio-default-rtdb.firebaseio.com",
+
+  projectId: "newumumburio",
+
+  storageBucket: "newumumburio.firebasestorage.app",
+
+  messagingSenderId: "1094768102620",
+
+  appId: "1:1094768102620:web:cbd03620a8c2eb7db6b819"
+
 };
+
 
 
 const app = initializeApp(firebaseConfig);
