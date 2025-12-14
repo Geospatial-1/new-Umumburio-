@@ -1,80 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Umumburio Self-Help Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</div>
+</div>
+</section>
 
 
-<style>
-:root {
---green:#0f8f3f;
---green-dark:#0b5f2a;
---yellow:#f5c400;
---light:#f9fafb;
---dark:#1f2937;
+<section>
+<h2>Members’ Businesses</h2>
+<div class="grid grid-4">
+<div class="card">Agrovet & Farm Supplies</div>
+<div class="card">Retail & Wholesale Shops</div>
+<div class="card">Transport & Motorcycle Services</div>
+<div class="card">Food Processing & Catering</div>
+</div>
+</section>
+
+
+<section>
+<h2>Gallery</h2>
+<div class="gallery">
+<div class="gallery-track">
+<img /> <img /> <img /> <img /> <img /> <img />
+</div>
+</div>
+</section>
+
+
+<section>
+<h2>Upcoming Events & Announcements</h2>
+<div class="grid grid-3">
+<div class="card">Next Monthly Meeting – Rhino Restaurant</div>
+<div class="card">Loan Repayment Deadline Reminder</div>
+<div class="card">New Members Orientation Session</div>
+</div>
+</section>
+
+
+<section>
+<h2>Resources Centre</h2>
+<div class="grid grid-3">
+<div class="card">Group Constitution (Login Required)</div>
+<div class="card">Membership Cards</div>
+<div class="card">Annual Calendar</div>
+</div>
+</section>
+
+
+<section>
+<h2>Contact Us</h2>
+<div class="grid grid-3">
+<div class="card">📍 Rhino Restaurant, Kehancha</div>
+<div class="card">📞 07XXXXXXXX</div>
+<div class="card">✉️ umumburiogroup@outlook.com</div>
+</div>
+</section>
+
+
+<footer>
+<p>Registered with Kuria Sub-County Social Services Department</p>
+<p>© Umumburio Self-Help Group</p>
+</footer>
+
+
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+<div class="chat" id="chatBox">
+<header>Quick Help</header>
+<div class="chat-body">
+<p><strong>Q:</strong> How do I join?<br>A: Visit a meeting or contact the admin.</p>
+<p><strong>Q:</strong> Loan interest?<br>A: 10% flat rate.</p>
+</div>
+</div>
+
+
+<script>
+function toggleChat(){
+const c=document.getElementById('chatBox');
+c.style.display=c.style.display==='flex'?'none':'flex';
 }
+</script>
 
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
-
-body{
-font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-background:var(--light);
-color:var(--dark);
-line-height:1.65;
-}
-
-
-header{
-background:linear-gradient(90deg,var(--green),#14b45a);
-color:#fff;
-padding:1rem 1.5rem;
-position:sticky;
-top:0;
-z-index:10;
-}
-
-
-nav{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:1rem;
-font-weight:500;
-}
-
-
-section{
-max-width:1200px;
-margin:auto;
-padding:3.5rem 1.5rem;
-}
-
-
-h1,h2,h3{color:var(--green);}
-
-
-.hero{text-align:center;}
-.hero h1{font-size:2.4rem;margin-bottom:1rem;}
-
-
-.grid{display:grid;gap:1.5rem;}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-
-
-.card{
-background:#fff;
-border-radius:16px;
+</body>
 </html>
